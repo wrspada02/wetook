@@ -40,7 +40,7 @@ export function AvatarDumb(props: AvatarDumbProps) {
  return (
   <section className="flex relative gap-x-3">
    <article>
-    <h3 className='text-base'>Cody Fisher</h3>
+    <h3 className='text-base'>William Spada</h3>
     <p className='text-sm text-[#919191]'>Last connected 8 minutes ago</p>
    </article>
    <ul className='flex items-center gap-x-3'>
