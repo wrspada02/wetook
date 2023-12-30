@@ -2,7 +2,7 @@ import { Avatar } from "./components/avatar";
 
 function App() {
 
-  return <Avatar />;
+  return <Avatar isGroup={false} key={'AvatarTest'} />;
 }
 
 export default App
