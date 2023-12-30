@@ -1,6 +1,8 @@
 export interface AvatarDumbProps {
  handleMenu: {
-  setIsMenuOpen: (isMenuOpen: boolean) => void;
   isMenuOpen: boolean;
+  menuRef: React.RefObject<HTMLUListElement>;
+  setIsMenuOpen: (isMenuOpen: boolean) => void;
+  openMenu: () => void;
  }
 }
