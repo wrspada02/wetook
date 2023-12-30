@@ -8,6 +8,7 @@ export function Avatar(props: AvatarProps) {
  const menuRef = useRef<HTMLUListElement | null>(null);
 
  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+ const [isShowMenuOptionButton, setIsShowMenuOptionButton] = useState<boolean>(false);
 
  const openMenu = () => {
   setIsMenuOpen(true);
@@ -17,6 +18,16 @@ export function Avatar(props: AvatarProps) {
   if (menuRef.current && !menuRef.current?.contains(e.target as Node)) {
    setIsMenuOpen(false);
   }
+ }, [menuRef]);
+
+ const showMenuOptionButton = () => {
+  setIsShowMenuOptionButton(true);
+ };
+
+ const hideMenuOptionButton = useCallback(() => {
+  if (menuRef.current) return;
+
+  setIsShowMenuOptionButton(false);
  }, [menuRef]);
 
  useEffect(() => {
@@ -43,7 +54,7 @@ export function Avatar(props: AvatarProps) {
     <AvatarLib className='after:absolute after:animate-ripple !overflow-visible after:bottom-0 after:right-1 relative after:content-normal after:w-2 after:h-2 after:[clip-path:circle()] after:bg-green-400'>WS</AvatarLib>
    )}
    <figcaption>
-    <AvatarDumb handleMenu={{ isMenuOpen, setIsMenuOpen, openMenu, menuRef }} />
+    <AvatarDumb handleMenu={{ isMenuOpen, openMenu, menuRef, isShowMenuOptionButton, isShowMessage: true, hideMenuOptionButton, showMenuOptionButton }} />
    </figcaption>
   </figure>
  );

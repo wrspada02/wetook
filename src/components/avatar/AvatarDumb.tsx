@@ -13,22 +13,26 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ReportProblemOutlinedIcon from '@mui/icons-material/ReportProblemOutlined';
-import { AvatarDumbProps } from './interfaces/AvatarDumb';
+import { AvatarDumbProps } from './interfaces/AvatarDumbProps';
 
 export function AvatarDumb(props: AvatarDumbProps) {
  return (
-  <section className="flex relative gap-x-3">
+  <section className="flex relative gap-x-3" onMouseEnter={props.handleMenu.showMenuOptionButton} onMouseLeave={props.handleMenu.hideMenuOptionButton}>
    <article>
     <h3 className='text-base'>William Spada</h3>
     <p className='text-sm text-[#919191]'>Last connected 8 minutes ago</p>
    </article>
    <ul className='flex items-center gap-x-3'>
-    <li className="[clip-path:circle()] w-5 h-5 bg-[#FF4A4A] flex items-center justify-center">
-     <span className="text-center text-white text-xs">3</span>
-    </li>
-    <li className='cursor-pointer hover:opacity-50 hover:transition-all' onClick={props.handleMenu.openMenu}>
-     <MoreVertIcon />
-    </li>
+    {props.handleMenu.isShowMessage && (
+     <li className="[clip-path:circle()] w-5 h-5 bg-[#FF4A4A] flex items-center justify-center">
+      <span className="text-center text-white text-xs">3</span>
+     </li>
+    )}
+    {props.handleMenu.isShowMenuOptionButton && (
+     <li className='cursor-pointer hover:opacity-50 hover:transition-all' onClick={props.handleMenu.openMenu}>
+      <MoreVertIcon />
+     </li>
+    )}
    </ul>
    {props.handleMenu.isMenuOpen && (
     <MenuList className='bg-[#413e3e] text-white !absolute !left-full' ref={props.handleMenu.menuRef}>
