@@ -17,9 +17,9 @@ import { AvatarDumbProps } from './interfaces/AvatarDumbProps';
 
 export function AvatarDumb(props: AvatarDumbProps) {
  return (
-  <section className="flex relative gap-x-3" onMouseEnter={props.handleMenu.showMenuOptionButton} onMouseLeave={props.handleMenu.hideMenuOptionButton}>
+  <section className="flex relative gap-x-3 mobile:justify-between !w-full" onMouseEnter={props.handleMenu.showMenuOptionButton} onMouseLeave={props.handleMenu.hideMenuOptionButton}>
    <article>
-    <h3 className='text-base'>William Spada</h3>
+    <h3 className='text-base text-white'>William Spada</h3>
     <p className='text-sm text-[#919191]'>Last connected 8 minutes ago</p>
    </article>
    <ul className='flex items-center gap-x-3'>
@@ -29,7 +29,7 @@ export function AvatarDumb(props: AvatarDumbProps) {
      </li>
     )}
     {props.handleMenu.isShowMenuOptionButton && (
-     <li className='cursor-pointer hover:opacity-50 hover:transition-all' onClick={props.handleMenu.openMenu}>
+     <li className='cursor-pointer hover:opacity-50 hover:transition-all mobile:hidden' onClick={props.handleMenu.openMenu}>
       <MoreVertIcon />
      </li>
     )}

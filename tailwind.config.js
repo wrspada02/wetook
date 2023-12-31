@@ -19,6 +19,31 @@ export default {
         ripple: "ripple 2s infinite ease-in-out",
       }
     },
+    screens: {
+      mobile: {
+        max: "767px"
+        },
+      tablet: {
+        min: "768px",
+        max: "1023px"
+      },  
+      desktop: {
+        min: "1024px",
+        max: "1919px"
+      },
+      fullscreen: {
+        min: "1920px",
+      },
+    },
+    backgroundColor: {
+      primary: '#323232',
+      secondary: '#737373',
+      green: '#29CB00',
+    },
+    colors: {
+      secondary: '#737373',
+      white: '#FFFFFF',
+    }
   },
   plugins: [],
 }

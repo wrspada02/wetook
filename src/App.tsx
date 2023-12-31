@@ -1,8 +1,7 @@
-import { Avatar } from "./components/avatar";
+import { Home } from "./pages/Home";
 
 function App() {
-
-  return <Avatar isGroup={false} key={'AvatarTest'} />;
+  return <Home />;
 }
 
 export default App

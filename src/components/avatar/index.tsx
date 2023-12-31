@@ -17,6 +17,7 @@ export function Avatar(props: AvatarProps) {
  const closeMenu = useCallback((e: Event) => {
   if (menuRef.current && !menuRef.current?.contains(e.target as Node)) {
    setIsMenuOpen(false);
+   setIsShowMenuOptionButton(false);
   }
  }, [menuRef]);
 
@@ -24,7 +25,7 @@ export function Avatar(props: AvatarProps) {
   setIsShowMenuOptionButton(true);
  };
 
- const hideMenuOptionButton = useCallback(() => {
+ const handleHideMenuOptionButton = useCallback(() => {
   if (menuRef.current) return;
 
   setIsShowMenuOptionButton(false);
@@ -39,7 +40,7 @@ export function Avatar(props: AvatarProps) {
  }, [closeMenu]);
 
  return (
-  <figure className='flex gap-x-2'>
+  <figure className='flex gap-x-2 w-full'>
    {props.isGroup ? (
     <Badge
      overlap="circular"
@@ -51,10 +52,10 @@ export function Avatar(props: AvatarProps) {
      <AvatarLib alt="Travis Howard">PS</AvatarLib>
     </Badge>
    ) : (
-    <AvatarLib className='after:absolute after:animate-ripple !overflow-visible after:bottom-0 after:right-1 relative after:content-normal after:w-2 after:h-2 after:[clip-path:circle()] after:bg-green-400'>WS</AvatarLib>
+    <AvatarLib className='after:absolute after:animate-ripple !overflow-visible after:bottom-0 after:right-1 relative after:content-normal after:w-2 after:h-2 after:[clip-path:circle()] after:bg-green'>WS</AvatarLib>
    )}
-   <figcaption>
-    <AvatarDumb handleMenu={{ isMenuOpen, openMenu, menuRef, isShowMenuOptionButton, isShowMessage: true, hideMenuOptionButton, showMenuOptionButton }} />
+   <figcaption className='flex-1'>
+    <AvatarDumb handleMenu={{ isMenuOpen, openMenu, menuRef, isShowMenuOptionButton, isShowMessage: true, hideMenuOptionButton: handleHideMenuOptionButton, showMenuOptionButton }} />
    </figcaption>
   </figure>
  );
