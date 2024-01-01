@@ -7,8 +7,8 @@ import { ChatPanel } from '../components/chat-panel';
 
 export function Home() {
  return (
-  <main className='bg-primary min-h-screen w-screen mobile:px-5 desktop:flex overflow-hidden'>
-   <aside className='desktop:px-3 desktop:min-w-[350px] desktop:border-r-[0.5px] border-[#FCFCFC]'>
+  <main className='bg-primary min-h-screen mobile:px-5 desktop:flex fullscreen:flex overflow-x-hidden'>
+   <aside className='desktop:px-3 desktop:min-w-[350px] fullscreen:px-5 fullscreen:min-w-[400px] mobile:border-none border-r-[0.5px] border-[#FCFCFC]'>
     <header className="flex items-center justify-between pt-10">
      <h1 className="text-white text-xl font-bold">Contact</h1>
      <button>
@@ -29,7 +29,7 @@ export function Home() {
     <NestedList titleHeader='Contact' isThereAddIconButton items={[<Avatar isGroup={false} isHeaderAvatar={false} />, <Avatar isGroup={false} isHeaderAvatar={false} />, <Avatar isGroup={false} isHeaderAvatar={false} />, <Avatar isGroup={false} isHeaderAvatar={false} />, <Avatar isGroup={false} isHeaderAvatar={false} />, <Avatar isGroup={false} isHeaderAvatar={false} />]} />
     <NestedList titleHeader='Group' isThereAddIconButton={false} items={[<Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />]} />
    </aside>
-   <section className='mobile:hidden tablet:hidden w-full'>
+   <section className='mobile:hidden tablet:hidden flex-1'>
     <ChatPanel />
    </section>
   </main>

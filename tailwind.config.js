@@ -48,6 +48,7 @@ export default {
       primary: '#323232',
       secondary: '#737373',
       green: '#29CB00',
+      red: '#FF4A4A',
     },
     colors: {
       secondary: '#737373',
