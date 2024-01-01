@@ -8,4 +8,5 @@ export interface AvatarDumbProps {
   hideMenuOptionButton: () => void;
   openMenu: () => void;
  }
+ isHeaderAvatar: boolean;
 }

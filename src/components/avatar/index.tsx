@@ -55,7 +55,7 @@ export function Avatar(props: AvatarProps) {
     <AvatarLib className='after:absolute after:animate-ripple !overflow-visible after:bottom-0 after:right-1 relative after:content-normal after:w-2 after:h-2 after:[clip-path:circle()] after:bg-green'>WS</AvatarLib>
    )}
    <figcaption className='flex-1'>
-    <AvatarDumb handleMenu={{ isMenuOpen, openMenu, menuRef, isShowMenuOptionButton, isShowMessage: true, hideMenuOptionButton: handleHideMenuOptionButton, showMenuOptionButton }} />
+    <AvatarDumb isHeaderAvatar={props.isHeaderAvatar} handleMenu={{ isMenuOpen, openMenu, menuRef, isShowMenuOptionButton, isShowMessage: true, hideMenuOptionButton: handleHideMenuOptionButton, showMenuOptionButton }} />
    </figcaption>
   </figure>
  );

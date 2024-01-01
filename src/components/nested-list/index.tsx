@@ -15,7 +15,7 @@ export function NestedList(props: NestedListProps) {
  return (
   <article className="pt-3">
    <header className="flex items-center justify-between">
-    <div className="flex items-center gap-x-2" onClick={handleShowList}>
+    <div className="flex items-center gap-x-2 cursor-pointer" onClick={handleShowList}>
      {isOpen ? (
       <ArrowDropDownIcon style={{ color: '#737373' }} />
      ) : (
@@ -24,14 +24,14 @@ export function NestedList(props: NestedListProps) {
      <span className="uppercase text-xs text-secondary">{props.titleHeader}</span>
     </div>
     {props.isThereAddIconButton && (
-     <AddIcon style={{ color: 'white' }} />
+     <AddIcon style={{ color: 'white' }} className="cursor-pointer" />
     )}
    </header>
 
    {isOpen && (
     <List className="animate-extendToBottom">
-     {props.items.map(item => (
-      <ListItem disablePadding>
+     {props.items.map((item, index) => (
+      <ListItem disablePadding key={index}>
        <ListItemButton className="!px-0">
         {item}
        </ListItemButton>
