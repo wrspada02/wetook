@@ -23,11 +23,13 @@ export function NestedList(props: NestedListProps) {
      )}
      <span className="uppercase text-xs text-secondary">{props.titleHeader}</span>
     </div>
-    <AddIcon style={{ color: 'white' }} />
+    {props.isThereAddIconButton && (
+     <AddIcon style={{ color: 'white' }} />
+    )}
    </header>
 
    {isOpen && (
-    <List>
+    <List className="animate-extendToBottom">
      {props.items.map(item => (
       <ListItem disablePadding>
        <ListItemButton className="!px-0">

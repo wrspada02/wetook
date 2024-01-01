@@ -13,10 +13,19 @@ export default {
             transform: "scale(2.4)",
             opacity: "0"
           },
+        },
+        extendToBottom: {
+          from: {
+            transform: "translateY(-20px)",
+          },
+          to: {
+            transform: "translateY(0)",
+          },
         }
       },
       animation: {
         ripple: "ripple 2s infinite ease-in-out",
+        extendToBottom: "extendToBottom 0.5s ease-in-out",
       }
     },
     screens: {

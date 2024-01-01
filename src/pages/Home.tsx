@@ -24,8 +24,8 @@ export function Home() {
      }
     />
    </form>
-   <NestedList titleHeader='Contact' items={[<Avatar isGroup={false} />, <Avatar isGroup={false} />, <Avatar isGroup={false} />, <Avatar isGroup={false} />, <Avatar isGroup={false} />, <Avatar isGroup={false} />]} />
-   <NestedList titleHeader='Group' items={[<Avatar isGroup />, <Avatar isGroup />, <Avatar isGroup />, <Avatar isGroup />, <Avatar isGroup />, <Avatar isGroup />]} />
+   <NestedList titleHeader='Contact' isThereAddIconButton items={[<Avatar isGroup={false} />, <Avatar isGroup={false} />, <Avatar isGroup={false} />, <Avatar isGroup={false} />, <Avatar isGroup={false} />, <Avatar isGroup={false} />]} />
+   <NestedList titleHeader='Group' isThereAddIconButton={false} items={[<Avatar isGroup />, <Avatar isGroup />, <Avatar isGroup />, <Avatar isGroup />, <Avatar isGroup />, <Avatar isGroup />]} />
   </main>
  );
 }
