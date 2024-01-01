@@ -40,7 +40,7 @@ export function ChatPanel() {
       <section className="px-5">
         {audios.map((audio, index) => (
           <Message type="call" value={audio} key={index} />
-        ))};
+        ))}
       </section>
   </section>
  );
