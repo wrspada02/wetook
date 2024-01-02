@@ -7,7 +7,7 @@ import { Message } from "../message";
 
 
 export function ChatPanel() {
- const audios = ['monalisa.pdf'];
+ const audios = ['Rua Castro Alves, 553, Vila Aparecida, Braganca Paulista, Sao Paulo'];
  return (
   <section>
       <header className="flex items-center justify-between px-3 py-5 bg-primary border-b-[0.5px] border-[#FCFCFC]">
@@ -39,7 +39,7 @@ export function ChatPanel() {
       </header>
       <section className="px-5">
         {audios.map((audio, index) => (
-          <Message type="file" value={audio} isIncomingMessage={false} key={index} />
+          <Message type="location" value={audio} isIncomingMessage={false} key={index} />
         ))}
       </section>
   </section>

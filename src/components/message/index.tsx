@@ -2,6 +2,7 @@ import { Audio } from "./components/audio";
 import { Call } from "./components/call";
 import { Common } from "./components/common";
 import { File } from "./components/file";
+import { Location } from "./components/location";
 import { MessageProps } from "./interfaces/MessageProps";
 
 export function Message({ type, value, isIncomingMessage }: MessageProps) {
@@ -10,7 +11,7 @@ export function Message({ type, value, isIncomingMessage }: MessageProps) {
     call: <Call timeDuration={value as string} type="incoming" />,
     common: <Common content={value as string} hour="09:32am" />,
     file: <File name={value as string} />,
-    location: '',
+    location: <Location locationName={value as string} />,
     photos: '',
   };
 
