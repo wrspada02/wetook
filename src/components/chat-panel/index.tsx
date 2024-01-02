@@ -7,7 +7,7 @@ import { Message } from "../message";
 
 
 export function ChatPanel() {
- const audios = ['00:30', '01:47', '01:55', '03:00'];
+ const audios = ['Hahahah!! Its crazy thank you so much'];
  return (
   <section>
       <header className="flex items-center justify-between px-3 py-5 bg-primary border-b-[0.5px] border-[#FCFCFC]">
@@ -39,7 +39,7 @@ export function ChatPanel() {
       </header>
       <section className="px-5">
         {audios.map((audio, index) => (
-          <Message type="call" value={audio} key={index} />
+          <Message type="common" value={audio} isIncomingMessage key={index} />
         ))}
       </section>
   </section>
