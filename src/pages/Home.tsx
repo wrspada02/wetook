@@ -30,7 +30,7 @@ export function Home() {
     <NestedList titleHeader='Group' isThereAddIconButton={false} items={[<Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />]} />
    </aside>
    <section className='mobile:hidden tablet:hidden flex-1'>
-    <ChatPanel />
+    <ChatPanel messages={[]} />
    </section>
   </main>
  );

@@ -4,10 +4,10 @@ import CallIcon from '@mui/icons-material/Call';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Message } from "../message";
+import { ChatPanelProps } from "./interfaces/ChatPanelProps";
+import {v4 as uuid } from 'uuid';
 
-
-export function ChatPanel() {
- const audios = ['Rua Castro Alves, 553, Vila Aparecida, Braganca Paulista, Sao Paulo'];
+export function ChatPanel(props: ChatPanelProps) {
  return (
   <section>
       <header className="flex items-center justify-between px-3 py-5 bg-primary border-b-[0.5px] border-[#FCFCFC]">
@@ -38,8 +38,14 @@ export function ChatPanel() {
       </nav>
       </header>
       <section className="px-5">
-        {audios.map((audio, index) => (
-          <Message type="location" value={audio} isIncomingMessage={false} key={index} />
+        {props.messages.map((message) => (
+          message.messageType === 'photos' ? (
+            <ul className="flex items-center gap-x-2">
+              <Message type="photos" value={message.messageContent} isIncomingMessage={message.isIncomingMessage} key={uuid()} />
+            </ul>
+          ) : (
+              <Message type={message.messageType} value={message.messageContent} isIncomingMessage={message.isIncomingMessage} key={uuid()} />
+            )
         ))}
       </section>
   </section>

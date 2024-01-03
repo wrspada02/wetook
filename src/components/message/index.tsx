@@ -3,6 +3,7 @@ import { Call } from "./components/call";
 import { Common } from "./components/common";
 import { File } from "./components/file";
 import { Location } from "./components/location";
+import { Photos } from "./components/photos";
 import { MessageProps } from "./interfaces/MessageProps";
 
 export function Message({ type, value, isIncomingMessage }: MessageProps) {
@@ -12,12 +13,12 @@ export function Message({ type, value, isIncomingMessage }: MessageProps) {
     common: <Common content={value as string} hour="09:32am" />,
     file: <File name={value as string} />,
     location: <Location locationName={value as string} />,
-    photos: '',
+    photos: <Photos photosUrl={value as string[]} />,
   };
 
   return (
-  <article className={`${isIncomingMessage ? 'bg-[#2C80FF]' : 'bg-[#4C4C4C]'} rounded-lg w-fit mt-3`}>
-    {message[type]}
-  </article>
+    <article className={`${isIncomingMessage ? 'bg-[#2C80FF]' : 'bg-[#4C4C4C]'} rounded-lg w-fit mt-3`}>
+      {message[type]}
+    </article>
   );
 }
