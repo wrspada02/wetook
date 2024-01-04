@@ -1,5 +1,5 @@
-import { ChatPanelMessage } from "./ChatPanelMessage";
+import { ChatProps } from "./ChatProps";
 
 export interface ChatPanelProps {
-  messages: ChatPanelMessage[];
+  chat: ChatProps[];
 }

@@ -38,15 +38,20 @@ export function ChatPanel(props: ChatPanelProps) {
       </nav>
       </header>
       <section className="px-5">
-        {props.messages.map((message) => (
-          message.messageType === 'photos' ? (
-            <ul className="flex items-center gap-x-2">
-              <Message type="photos" value={message.messageContent} isIncomingMessage={message.isIncomingMessage} key={uuid()} />
-            </ul>
-          ) : (
-              <Message type={message.messageType} value={message.messageContent} isIncomingMessage={message.isIncomingMessage} key={uuid()} />
-            )
-        ))}
+        <ul className="flex flex-col">
+          {props.chat.map((content) => (
+            <>
+              <h2 className="text-white self-center pt-5">{content.day}</h2>
+              {content.messages.map((message) => (
+                message.messageType === 'photos' ? (
+                    <Message type="photos" value={message.messageContent} isIncomingMessage={message.isIncomingMessage} hour={message.hour} key={uuid()} />
+                ) : (
+                    <Message type={message.messageType} value={message.messageContent} isIncomingMessage={message.isIncomingMessage} hour={message.hour} key={uuid()} />
+                  )
+              ))}
+            </>
+          ))}
+        </ul>
       </section>
   </section>
  );

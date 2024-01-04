@@ -30,7 +30,7 @@ export function Home() {
     <NestedList titleHeader='Group' isThereAddIconButton={false} items={[<Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />]} />
    </aside>
    <section className='mobile:hidden tablet:hidden flex-1'>
-    <ChatPanel messages={[]} />
+    <ChatPanel chat={[{day: 'Today', messages: [{isIncomingMessage: true, messageContent: 'Hello World', messageType: 'common', hour: '09:32am'}, { isIncomingMessage: false, messageContent: ['https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg', 'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg', 'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg'], messageType: 'photos', hour: '09:40am'}]}]} />
    </section>
   </main>
  );
