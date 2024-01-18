@@ -34,7 +34,6 @@ export function NestedList(props: NestedListProps) {
       </Tooltip>
     )}
    </header>
-
    {isOpen && (
     <List className="animate-extendToBottom z-10">
      {props.items.map((item) => (

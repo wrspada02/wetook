@@ -35,7 +35,7 @@ export function AvatarDumb(props: AvatarDumbProps) {
     )}
    </ul>
    {props.handleMenu.isMenuOpen && (
-    <MenuList className='bg-[#413e3e] text-white !absolute !left-full' ref={props.handleMenu.menuRef}>
+    <MenuList className='bg-[#413e3e] text-white !absolute !left-0 z-10' ref={props.handleMenu.menuRef}>
      <MenuItem>
       <ListItemIcon>
        <CheckIcon fontSize="small" style={{ color: 'white' }} />
