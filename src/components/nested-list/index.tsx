@@ -35,7 +35,7 @@ export function NestedList(props: NestedListProps) {
     )}
    </header>
    {isOpen && (
-    <List className="animate-extendToBottom z-10">
+    <List className="animate-extendToBottom">
      {props.items.map((item) => (
       <ListItem disablePadding key={uuid()}>
        <ListItemButton className="!px-0">
