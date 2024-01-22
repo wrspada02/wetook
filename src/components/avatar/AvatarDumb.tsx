@@ -18,23 +18,25 @@ import { AvatarDumbProps } from './interfaces/AvatarDumbProps';
 export function AvatarDumb(props: AvatarDumbProps) {
  return (
   <section className="flex relative gap-x-3 mobile:justify-between !w-full" onMouseEnter={props.handleMenu.showMenuOptionButton} onMouseLeave={props.handleMenu.hideMenuOptionButton}>
-   <article>
+   <article className={props.isHeaderAvatar ? 'w-full' : ''}>
     <h3 className='text-base text-white'>William Spada</h3>
     <p className='text-sm text-[#919191]'>Last connected 8 minutes ago</p>
    </article>
-   <ul className='flex items-center gap-x-3'>
-    {props.handleMenu.isShowMessage && !props.isHeaderAvatar && (
-     <li className="[clip-path:circle()] w-5 h-5 bg-[#FF4A4A] flex items-center justify-center">
-      <span className="text-center text-white text-xs">3</span>
-     </li>
-    )}
-    {props.handleMenu.isShowMenuOptionButton && !props.isHeaderAvatar && (
-     <li className='cursor-pointer hover:opacity-50 hover:transition-all mobile:hidden' onClick={props.handleMenu.openMenu}>
-      <MoreVertIcon style={{ color: 'white' }} />
-     </li>
-    )}
-   </ul>
-   {props.handleMenu.isMenuOpen && (
+   {!props.isHeaderAvatar && (
+    <ul className='flex items-center gap-x-3'>
+      {props.handleMenu.isShowMessage && (
+      <li className="[clip-path:circle()] w-5 h-5 bg-[#FF4A4A] flex items-center justify-center">
+        <span className="text-center text-white text-xs">3</span>
+      </li>
+      )}
+      {props.handleMenu.isShowMenuOptionButton && (
+      <li className='cursor-pointer hover:opacity-50 hover:transition-all mobile:hidden' onClick={props.handleMenu.openMenu}>
+        <MoreVertIcon style={{ color: 'white' }} />
+      </li>
+      )}
+    </ul>
+   )}
+   {props.handleMenu.isMenuOpen && !props.isHeaderAvatar && (
     <MenuList className='bg-[#413e3e] text-white !absolute !left-0 z-10' ref={props.handleMenu.menuRef}>
      <MenuItem>
       <ListItemIcon>

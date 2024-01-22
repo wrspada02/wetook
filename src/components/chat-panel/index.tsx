@@ -18,36 +18,36 @@ export function ChatPanel(props: ChatPanelProps) {
  return (
   <section className="relative h-full">
       <header className="flex items-center justify-between px-3 py-5 bg-primary border-b-[0.5px] border-[#FCFCFC]">
-      <Avatar isGroup={false} isHeaderAvatar={true} key={'chat-panel-avatar'} />
+      <Avatar isGroup={false} isHeaderAvatar={true} key={uuid()} />
       <nav>
         <ul className="flex items-center gap-x-4">
-        <li>
+        <li className="hover:cursor-pointer">
           <a href="">
             <Tooltip title="Video Call" >
               <VideocamIcon style={{ color: 'white' }} />
             </Tooltip>
           </a>
         </li>
-        <li>
+        <li className="hover:cursor-pointer">
           <a href="">
             <Tooltip title="Voice Call" >
               <CallIcon style={{ color: 'white' }} />
             </Tooltip>
           </a>
         </li>
-        <li>
+        <li className="hover:cursor-pointer">
           <a href="">
             <Tooltip title="Search">
               <SearchIcon style={{ color: 'white' }} />
             </Tooltip>
           </a>
         </li>
-        <li>
-          <a href="">
+        <li className="hover:cursor-pointer" onClick={props.onClickAboutContact}>
+          <article>
             <Tooltip title="More Options">
               <MoreVertIcon style={{ color: 'white' }} />
             </Tooltip>
-          </a>
+          </article>
         </li>
         </ul>
       </nav>
