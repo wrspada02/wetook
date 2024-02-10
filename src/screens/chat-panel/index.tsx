@@ -62,13 +62,9 @@ export function ChatPanel(props: ChatPanelProps) {
       <nav>
         <ul className="flex items-center gap-x-4">
           {headerListOptions.map((option) => (
-            <li key={uuid()} className="hover:cursor-pointer" onClick={option.action}>
+            <li key={uuid()} className="hover:cursor-pointer" onClick={option?.action}>
               <Tooltip title={option.text}>
-                <a href="">
-                  <Tooltip title="Video Call" >
-                    <VideocamIcon style={{ color: 'white' }} />
-                  </Tooltip>
-                </a>
+                {option.icon}
               </Tooltip>
             </li>
           ))}
@@ -80,13 +76,9 @@ export function ChatPanel(props: ChatPanelProps) {
           {props.chat.map((content) => (
             <li className="flex flex-col" key={uuid()}>
               <h2 className="text-white self-center pt-5">{content.day}</h2>
-              {content.messages.map((message) => (
-                message.messageType === 'photos' ? (
-                    <Message type="photos" value={message.messageContent} isIncomingMessage={message.isIncomingMessage} hour={message.hour} key={uuid()} />
-                ) : (
-                    <Message type={message.messageType} value={message.messageContent} isIncomingMessage={message.isIncomingMessage} hour={message.hour} key={uuid()} />
-                  )
-              ))}
+                {content.messages.map((message) => (
+                  <Message type={message.messageType} value={message.messageContent} isIncomingMessage={message.isIncomingMessage} hour={message.hour} key={uuid()} />
+                ))}
             </li>
           ))}
         </ul>

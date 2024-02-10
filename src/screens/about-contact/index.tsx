@@ -8,49 +8,66 @@ import WarningIcon from '@mui/icons-material/Warning';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import CallIcon from '@mui/icons-material/Call';
 import SearchIcon from '@mui/icons-material/Search';
+import { Tooltip } from '@mui/material';
 
 export function AboutContact() {
+
+  const aboutContactCommonListOptions = [
+    {
+      icon: <VideocamIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Video Call',
+    },
+    {
+      icon: <CallIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Voice Call',
+    },
+    {
+      icon: <SearchIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Search',
+    },
+  ];
+
+  const aboutContactListOptions = [
+    {
+      icon: <InfoIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'About',
+    },
+    {
+      icon: <AttachFileIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'File and Media',
+    },
+    {
+      icon: <GroupIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Privacy and Settings',
+    },
+    {
+      icon: <WarningIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Report',
+    },
+  ];
   return (
     <section className='py-20 px-5'>
       <Avatar isColumnStyle isGroup={false} isHeaderAvatar={true} key={uuid()} />
       <ul className='flex gap-x-3 mt-5'>
-        <li className='p-4 bg-secondary rounded-lg hover:cursor-pointer'>
-          <InfoIcon style={{ color: 'white' }} />
-        </li>
-        <li className='p-4 bg-secondary rounded-lg hover:cursor-pointer'>
-          <VideocamIcon style={{ color: 'white' }} />
-        </li>
-        <li className='p-4 bg-secondary rounded-lg hover:cursor-pointer'>
-          <CallIcon style={{ color: 'white' }} />
-        </li>
-        <li className='p-4 bg-secondary rounded-lg hover:cursor-pointer'>
-          <SearchIcon style={{ color: 'white' }} />
-        </li>
+        {aboutContactCommonListOptions.map(option => (
+          <li className='p-4 bg-secondary rounded-lg hover:cursor-pointer'>
+            <Tooltip title={option.text}>
+              {option.icon}
+            </Tooltip>
+          </li>
+        ))}
       </ul>
       <section className='mt-5'>
         <h2 className='text-[#919191] font-semibold uppercase text-xs'>About user</h2>
         <nav>
           <ul>
-            <li className='flex items-center gap-x-3 mt-3 relative hover:cursor-pointer'>
-              <InfoIcon style={{ color: 'white', fontSize: 16 }} />
-              <p className='text-white text-base font-medium'>About</p>
-              <ChevronRightIcon className='text-[#737373] absolute left-[95%]' />
-            </li>
-            <li className='flex items-center gap-x-3 mt-3 relative hover:cursor-pointer'>
-              <AttachFileIcon style={{ color: 'white', fontSize: 16 }} />
-              <p className='text-white text-base font-medium'>File and Media</p>
-              <ChevronRightIcon className='text-[#737373] absolute left-[95%]' />
-            </li>
-            <li className='flex items-center gap-x-3 mt-3 relative hover:cursor-pointer'>
-              <GroupIcon style={{ color: 'white', fontSize: 16 }} />
-              <p className='text-white text-base font-medium'>Privacy and Settings</p>
-              <ChevronRightIcon className='text-[#737373] absolute left-[95%]' />
-            </li>
-            <li className='flex items-center gap-x-3 mt-3 relative hover:cursor-pointer'>
-              <WarningIcon style={{ color: 'white', fontSize: 16 }} />
-              <p className='text-white text-base font-medium'>Report</p>
-              <ChevronRightIcon className='text-[#737373] absolute left-[95%]' />
-            </li>
+            {aboutContactListOptions.map(option => (
+              <li className='flex items-center gap-x-3 mt-3 relative hover:cursor-pointer'>
+                  {option.icon}
+                  <p className='text-white text-base font-medium'>{option.text}</p>
+                  <ChevronRightIcon className='text-[#737373] absolute left-[95%]' />
+              </li>
+            ))}
           </ul>
         </nav>
       </section>
