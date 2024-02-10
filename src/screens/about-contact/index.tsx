@@ -1,5 +1,5 @@
 import {v4 as uuid } from 'uuid';
-import { Avatar } from '../avatar';
+import { Avatar } from '../../components/avatar';
 import InfoIcon from '@mui/icons-material/Info';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';

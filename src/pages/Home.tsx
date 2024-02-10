@@ -3,8 +3,8 @@ import TuneIcon from '@mui/icons-material/Tune';
 import { Input, InputAdornment, Tooltip } from '@mui/material';
 import { NestedList } from '../components/nested-list';
 import { Avatar } from '../components/avatar';
-import { ChatPanel } from '../components/chat-panel';
-import { AboutContact } from '../components/about-contact';
+import { ChatPanel } from '../screens/chat-panel';
+import { AboutContact } from '../screens/about-contact';
 import { useCallback, useState } from 'react';
 
 export function Home() {

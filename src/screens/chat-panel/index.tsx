@@ -1,9 +1,9 @@
-import { Avatar } from "../avatar";
+import { Avatar } from "../../components/avatar";
 import VideocamIcon from '@mui/icons-material/Videocam';
 import CallIcon from '@mui/icons-material/Call';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Message } from "../message";
+import { Message } from "../../components/message";
 import { ChatPanelProps } from "./interfaces/ChatPanelProps";
 import {v4 as uuid } from 'uuid';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
