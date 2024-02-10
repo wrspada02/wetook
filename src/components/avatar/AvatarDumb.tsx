@@ -3,7 +3,6 @@ import MenuList from '@mui/material/MenuList';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
 import CheckIcon from '@mui/icons-material/Check';
 import NotificationsOffIcon from '@mui/icons-material/NotificationsOff';
 import PersonIcon from '@mui/icons-material/Person';
@@ -13,87 +12,81 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ReportProblemOutlinedIcon from '@mui/icons-material/ReportProblemOutlined';
-import { AvatarDumbProps } from './interfaces/AvatarDumbProps';
+import { AvatarContext } from './context/avatar';
+import { useContext } from 'react';
 
-export function AvatarDumb(props: AvatarDumbProps) {
+export function AvatarDumb() {
+  const avatar = useContext(AvatarContext);
+
+  const avatarListOptions  = [
+    {
+      icon: <CheckIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Mark as Read',
+    },
+    {
+      icon: <NotificationsOffIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Turn off Notifications',
+    },
+    {
+      icon: <PersonIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Profile',
+    },
+    {
+      icon: <CallIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Call',
+    },
+    {
+      icon: <VideocamIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Video Call',
+    },
+    {
+      icon: <HelpOutlineIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Block',
+    },
+    {
+      icon: <Inventory2OutlinedIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Move to Box',
+    },
+    {
+      icon: <DeleteOutlineIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Delete Conversation',
+    },
+    {
+      icon: <ReportProblemOutlinedIcon fontSize="small" style={{ color: 'white' }} />,
+      text: 'Report',
+    },
+  ];
+
  return (
-  <section className="flex relative gap-x-3 mobile:justify-between !w-full" onMouseEnter={props.handleMenu.showMenuOptionButton} onMouseLeave={props.handleMenu.hideMenuOptionButton}>
-   <article className={props.isHeaderAvatar ? 'w-full' : ''}>
+  <section className="flex relative gap-x-3 mobile:justify-between !w-full" onMouseEnter={avatar?.showMenuOptionButton} onMouseLeave={avatar?.hideMenuOptionButton}>
+   <article className={avatar?.isHeaderAvatar ? 'w-full' : ''}>
     <h3 className='text-base text-white'>William Spada</h3>
     <p className='text-sm text-[#919191]'>Last connected 8 minutes ago</p>
    </article>
-   {!props.isHeaderAvatar && (
+   {!avatar?.isHeaderAvatar && (
     <ul className='flex items-center gap-x-3'>
-      {props.handleMenu.isShowMessage && (
+      {avatar?.isShowMessage && (
       <li className="[clip-path:circle()] w-5 h-5 bg-[#FF4A4A] flex items-center justify-center">
         <span className="text-center text-white text-xs">3</span>
       </li>
       )}
-      {props.handleMenu.isShowMenuOptionButton && (
-      <li className='cursor-pointer hover:opacity-50 hover:transition-all mobile:hidden' onClick={props.handleMenu.openMenu}>
+      {avatar?.isShowMenuOptionButton && (
+      <li className='cursor-pointer hover:opacity-50 hover:transition-all mobile:hidden' onClick={avatar?.openMenu}>
         <MoreVertIcon style={{ color: 'white' }} />
       </li>
       )}
     </ul>
    )}
-   {props.handleMenu.isMenuOpen && !props.isHeaderAvatar && (
-    <MenuList className='bg-[#413e3e] text-white !absolute !left-0 z-10' ref={props.handleMenu.menuRef}>
-     <MenuItem>
-      <ListItemIcon>
-       <CheckIcon fontSize="small" style={{ color: 'white' }} />
-      </ListItemIcon>
-      <ListItemText>Mark as Read</ListItemText>
-     </MenuItem>
-     <MenuItem>
-      <ListItemIcon>
-       <NotificationsOffIcon fontSize="small" style={{ color: 'white' }} />
-      </ListItemIcon>
-      <ListItemText>Turn off Notifications</ListItemText>
-     </MenuItem>
-     <MenuItem>
-      <ListItemIcon>
-       <PersonIcon fontSize="small" style={{ color: 'white' }} />
-      </ListItemIcon>
-      <ListItemText>Profile</ListItemText>
-     </MenuItem>
-     <Divider />
-     <MenuItem>
-      <ListItemIcon>
-       <CallIcon fontSize="small" style={{ color: 'white' }} />
-      </ListItemIcon>
-      <ListItemText>Call</ListItemText>
-     </MenuItem>
-     <MenuItem>
-      <ListItemIcon>
-       <VideocamIcon fontSize="small" style={{ color: 'white' }} />
-      </ListItemIcon>
-      <ListItemText>Video Call</ListItemText>
-     </MenuItem>
-     <Divider />
-     <MenuItem>
-      <ListItemIcon>
-       <HelpOutlineIcon fontSize="small" style={{ color: 'white' }} />
-      </ListItemIcon>
-      <ListItemText>Block</ListItemText>
-     </MenuItem>
-     <MenuItem>
-      <ListItemIcon>
-       <Inventory2OutlinedIcon fontSize="small" style={{ color: 'white' }} />
-      </ListItemIcon>
-      <ListItemText>Move to Box</ListItemText>
-     </MenuItem>
-     <MenuItem>
-      <ListItemIcon>
-       <DeleteOutlineIcon fontSize="small" style={{ color: 'white' }} />
-      </ListItemIcon>
-      <ListItemText>Delete Conversation</ListItemText>
-     </MenuItem>
-     <MenuItem>
-      <ListItemIcon>
-       <ReportProblemOutlinedIcon fontSize="small" style={{ color: 'white' }} />
-      </ListItemIcon>
-      <ListItemText>Report</ListItemText>
-     </MenuItem>
+   {avatar?.isMenuOpen && !avatar?.isHeaderAvatar && (
+    <MenuList className='bg-[#413e3e] text-white !absolute !left-0 z-10' ref={avatar?.menuRef}>
+      {avatarListOptions.map((option) => (
+        <MenuItem key={option.text}>
+          <ListItemIcon>
+            {option.icon}
+          </ListItemIcon>
+          <ListItemText>{option.text}</ListItemText>
+        </MenuItem>
+      ))}
     </MenuList>
    )}
   </section>

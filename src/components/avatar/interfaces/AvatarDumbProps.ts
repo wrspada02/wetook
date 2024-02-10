@@ -1,6 +1,10 @@
-import { HandleMenuProps } from "./HandleMenuProps";
-
 export interface AvatarDumbProps {
- handleMenu: HandleMenuProps;
- isHeaderAvatar: boolean;
+  isMenuOpen: boolean;
+  menuRef: React.RefObject<HTMLUListElement>;
+  isShowMenuOptionButton: boolean;
+  isShowMessage: boolean;
+  showMenuOptionButton: () => void;
+  hideMenuOptionButton: () => void;
+  openMenu: () => void;
+  isHeaderAvatar: boolean;
 }
