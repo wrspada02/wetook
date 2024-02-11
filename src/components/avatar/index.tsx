@@ -4,6 +4,7 @@ import { AvatarProps } from './interfaces/AvatarProps';
 import { Group } from './components/Group';
 import { Profile } from './components/Profile';
 import { AvatarContext } from './context/avatar';
+import { Typography } from '@mui/material';
 
 export function Avatar(props: AvatarProps) {
  const menuRef = useRef<HTMLUListElement | null>(null);
@@ -48,9 +49,9 @@ export function Avatar(props: AvatarProps) {
       ) : (
         <Profile />
       )}
-      <p className={`${props.isColumnStyle && 'text-center pt-3 gap-y-5'} flex-1`}>
-      <AvatarDumb />
-      </p>
+      <Typography component={'p'} variant='body2' className={`${props.isColumnStyle && 'text-center pt-3 gap-y-5'} flex-1`}>
+        <AvatarDumb />
+      </Typography>
     </article>
   </AvatarContext.Provider>
  );

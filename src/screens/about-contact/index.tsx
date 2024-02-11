@@ -8,7 +8,7 @@ import WarningIcon from '@mui/icons-material/Warning';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import CallIcon from '@mui/icons-material/Call';
 import SearchIcon from '@mui/icons-material/Search';
-import { Tooltip } from '@mui/material';
+import { Tooltip, Typography } from '@mui/material';
 
 export function AboutContact() {
 
@@ -64,7 +64,9 @@ export function AboutContact() {
             {aboutContactListOptions.map(option => (
               <li className='flex items-center gap-x-3 mt-3 relative hover:cursor-pointer'>
                   {option.icon}
-                  <p className='text-white text-base font-medium'>{option.text}</p>
+                  <Typography component={'p'} variant='body2' className="text-white text-base font-medium">
+                    {option.text}
+                  </Typography>
                   <ChevronRightIcon className='text-[#737373] absolute left-[95%]' />
               </li>
             ))}

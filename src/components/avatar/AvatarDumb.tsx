@@ -14,6 +14,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ReportProblemOutlinedIcon from '@mui/icons-material/ReportProblemOutlined';
 import { AvatarContext } from './context/avatar';
 import { useContext } from 'react';
+import { Typography } from '@mui/material';
 
 export function AvatarDumb() {
   const avatar = useContext(AvatarContext);
@@ -61,7 +62,9 @@ export function AvatarDumb() {
   <section className="flex relative gap-x-3 mobile:justify-between !w-full" onMouseEnter={avatar?.showMenuOptionButton} onMouseLeave={avatar?.hideMenuOptionButton}>
    <article className={avatar?.isHeaderAvatar ? 'w-full' : ''}>
     <h3 className='text-base text-white'>William Spada</h3>
-    <p className='text-sm text-[#919191]'>Last connected 8 minutes ago</p>
+    <Typography component={'p'} variant='body2' className='text-sm text-[#919191]'>
+      Last connected 8 minutes ago
+    </Typography>
    </article>
    {!avatar?.isHeaderAvatar && (
     <ul className='flex items-center gap-x-3'>
