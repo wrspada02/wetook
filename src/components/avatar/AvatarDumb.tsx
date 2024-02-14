@@ -12,14 +12,14 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ReportProblemOutlinedIcon from '@mui/icons-material/ReportProblemOutlined';
-import { AvatarContext } from './context/avatar';
 import { useContext } from 'react';
 import { Typography } from '@mui/material';
+import { AvatarContext } from './context/avatar';
 
 export function AvatarDumb() {
   const avatar = useContext(AvatarContext);
 
-  const avatarListOptions  = [
+  const avatarListOptions = [
     {
       icon: <CheckIcon fontSize="small" style={{ color: 'white' }} />,
       text: 'Mark as Read',
@@ -58,40 +58,40 @@ export function AvatarDumb() {
     },
   ];
 
- return (
-  <section className="flex relative gap-x-3 mobile:justify-between !w-full" onMouseEnter={avatar?.showMenuOptionButton} onMouseLeave={avatar?.hideMenuOptionButton}>
-   <article className={avatar?.isHeaderAvatar ? 'w-full' : ''}>
-    <h3 className='text-base text-white'>William Spada</h3>
-    <Typography component={'p'} variant='body2' className='text-sm text-[#919191]'>
-      Last connected 8 minutes ago
-    </Typography>
-   </article>
-   {!avatar?.isHeaderAvatar && (
-    <ul className='flex items-center gap-x-3'>
-      {avatar?.isShowMessage && (
-      <li className="[clip-path:circle()] w-5 h-5 bg-[#FF4A4A] flex items-center justify-center">
-        <span className="text-center text-white text-xs">3</span>
-      </li>
+  return (
+    <section className="flex relative gap-x-3 mobile:justify-between !w-full" onMouseEnter={avatar?.showMenuOptionButton} onMouseLeave={avatar?.hideMenuOptionButton}>
+      <article className={avatar?.isHeaderAvatar ? 'w-full' : ''}>
+        <h3 className="text-base text-white">William Spada</h3>
+        <Typography component="p" variant="body2" className="text-sm text-[#919191]">
+          Last connected 8 minutes ago
+        </Typography>
+      </article>
+      {!avatar?.isHeaderAvatar && (
+      <ul className="flex items-center gap-x-3">
+        {avatar?.isShowMessage && (
+        <li className="[clip-path:circle()] w-5 h-5 bg-[#FF4A4A] flex items-center justify-center">
+          <span className="text-center text-white text-xs">3</span>
+        </li>
+        )}
+        {avatar?.isShowMenuOptionButton && (
+        <li className="cursor-pointer hover:opacity-50 hover:transition-all mobile:hidden" onClick={avatar?.openMenu}>
+          <MoreVertIcon style={{ color: 'white' }} />
+        </li>
+        )}
+      </ul>
       )}
-      {avatar?.isShowMenuOptionButton && (
-      <li className='cursor-pointer hover:opacity-50 hover:transition-all mobile:hidden' onClick={avatar?.openMenu}>
-        <MoreVertIcon style={{ color: 'white' }} />
-      </li>
+      {avatar?.isMenuOpen && !avatar?.isHeaderAvatar && (
+      <MenuList className="bg-[#413e3e] text-white !absolute !left-0 z-10" ref={avatar?.menuRef}>
+        {avatarListOptions.map((option) => (
+          <MenuItem key={option.text}>
+            <ListItemIcon>
+              {option.icon}
+            </ListItemIcon>
+            <ListItemText>{option.text}</ListItemText>
+          </MenuItem>
+        ))}
+      </MenuList>
       )}
-    </ul>
-   )}
-   {avatar?.isMenuOpen && !avatar?.isHeaderAvatar && (
-    <MenuList className='bg-[#413e3e] text-white !absolute !left-0 z-10' ref={avatar?.menuRef}>
-      {avatarListOptions.map((option) => (
-        <MenuItem key={option.text}>
-          <ListItemIcon>
-            {option.icon}
-          </ListItemIcon>
-          <ListItemText>{option.text}</ListItemText>
-        </MenuItem>
-      ))}
-    </MenuList>
-   )}
-  </section>
- );
+    </section>
+  );
 }

@@ -1,5 +1,5 @@
-import { MessageAudioProps } from "./interfaces/MessageAudioProps";
 import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
+import { MessageAudioProps } from './interfaces/MessageAudioProps';
 
 export function Audio(props: MessageAudioProps) {
   return (

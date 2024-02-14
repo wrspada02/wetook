@@ -1,5 +1,5 @@
-import { MessageFileProps } from "./interfaces/MessageFileProps";
 import AttachmentIcon from '@mui/icons-material/Attachment';
+import { MessageFileProps } from './interfaces/MessageFileProps';
 
 export function File(props: MessageFileProps) {
   return (

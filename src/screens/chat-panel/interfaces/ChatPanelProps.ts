@@ -1,4 +1,4 @@
-import { ChatProps } from "./ChatProps";
+import { ChatProps } from './ChatProps';
 
 export interface ChatPanelProps {
   chat: ChatProps[];

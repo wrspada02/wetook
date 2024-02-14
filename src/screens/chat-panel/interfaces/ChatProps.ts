@@ -1,4 +1,4 @@
-import { ChatPanelMessage } from "./ChatPanelMessage";
+import { ChatPanelMessage } from './ChatPanelMessage';
 
 export interface ChatProps {
   day: string;
