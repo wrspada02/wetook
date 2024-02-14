@@ -15,5 +15,14 @@
     "plugins": [
         "@typescript-eslint",
         "react"
-    ]
+    ],
+    "rules": {
+        "import/prefer-default-export": "off",
+        "eslint-plugin-import/extensions": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/destructuring-assignment": "off",
+        "import/extensions": "off",
+        "import/no-unresolved": "off",
+        "react/jsx-filename-extension": "off"
+    }
 }
