@@ -2,6 +2,7 @@ import {
   useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { AvatarDumb } from './AvatarDumb';
 import { AvatarProps } from './interfaces/AvatarProps';
 import { Group } from './components/Group';
@@ -43,11 +44,8 @@ export function Avatar(props: AvatarProps) {
     };
   }, [closeMenu]);
 
-  return (
-    <AvatarContext.Provider value={{
-      ...props, isMenuOpen, openMenu, menuRef, isShowMenuOptionButton, isShowMessage: true, hideMenuOptionButton: handleHideMenuOptionButton, showMenuOptionButton,
-    }}
-    >
+  function Avatar() {
+    return (
       <article className={`${props.isColumnStyle && 'flex-col'} flex gap-x-2 w-full`}>
         {props.isGroup ? (
           <Group />
@@ -58,6 +56,21 @@ export function Avatar(props: AvatarProps) {
           <AvatarDumb />
         </Typography>
       </article>
+    );
+  }
+
+  return (
+    <AvatarContext.Provider value={{
+      ...props, isMenuOpen, openMenu, menuRef, isShowMenuOptionButton, isShowMessage: true, hideMenuOptionButton: handleHideMenuOptionButton, showMenuOptionButton,
+    }}
+    >
+      {props.linkUrl ? (
+        <Link to={props.linkUrl}>
+          <Avatar />
+        </Link>
+      ) : (
+        <Avatar />
+      )}
     </AvatarContext.Provider>
   );
 }

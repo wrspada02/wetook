@@ -45,9 +45,9 @@ export function AboutContact() {
     },
   ];
   return (
-    <section className="py-20 px-5">
+    <section className="py-20 px-5 bg-primary h-screen">
       <Avatar isColumnStyle isGroup={false} isHeaderAvatar key={uuid()} />
-      <ul className="flex gap-x-3 mt-5">
+      <ul className="flex gap-x-3 mt-5 justify-center">
         {aboutContactCommonListOptions.map((option) => (
           <li className="p-4 bg-secondary rounded-lg hover:cursor-pointer">
             <Tooltip title={option.text}>

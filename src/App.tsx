@@ -1,11 +1,21 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Home } from './pages/Home';
+import { ChatPanel } from './screens/chat-panel';
+import { AboutContact } from './screens/about-contact';
 
 function App() {
   const router = createBrowserRouter([
     {
       path: '/',
       element: <Home />,
+    },
+    {
+      path: '/chat/:chatId',
+      element: <ChatPanel />,
+    },
+    {
+      path: '/about-contact/:userId',
+      element: <AboutContact />,
     },
   ]);
 
