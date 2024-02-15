@@ -59,7 +59,7 @@ export function AvatarDumb() {
   ];
 
   return (
-    <section className="flex relative gap-x-3 mobile:justify-between !w-full" onMouseEnter={avatar?.showMenuOptionButton} onMouseLeave={avatar?.handleHideMenuOptionButton}>
+    <article className="flex relative gap-x-3 mobile:justify-between !w-full" onMouseEnter={avatar?.showMenuOptionButton} onMouseLeave={avatar?.handleHideMenuOptionButton}>
       <article className={avatar?.isHeaderAvatar ? 'w-full' : ''}>
         <h3 className="text-base text-white">William Spada</h3>
         <Typography component="p" variant="body2" className="text-sm text-[#919191]">
@@ -94,6 +94,6 @@ export function AvatarDumb() {
         ))}
       </MenuList>
       )}
-    </section>
+    </article>
   );
 }

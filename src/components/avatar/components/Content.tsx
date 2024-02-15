@@ -1,4 +1,3 @@
-import { Typography } from '@mui/material';
 import { useContext } from 'react';
 import { Group } from './Group';
 import { Profile } from './Profile';
@@ -15,9 +14,9 @@ export function Content() {
       ) : (
         <Profile />
       )}
-      <Typography component="p" variant="body2" className={`${avatar?.isColumnStyle && 'text-center pt-3 gap-y-5'} flex-1`}>
+      <div className={`${avatar?.isColumnStyle && 'text-center pt-3 gap-y-5'} flex-1`}>
         <AvatarDumb />
-      </Typography>
+      </div>
     </article>
   );
 }

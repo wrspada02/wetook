@@ -111,9 +111,9 @@ export function ChatPanel(props: ChatPanelProps) {
         </nav>
       </header>
       <section className="px-5 max-h-[80vh] overflow-y-auto scrollbar">
-        <ul>
+        <article>
           {chat.map((content) => (
-            <li className="flex flex-col" key={uuid()}>
+            <div className="flex flex-col" key={uuid()}>
               <h2 className="text-white self-center pt-5">{content.day}</h2>
               {content.messages.map((message) => (
                 <Message
@@ -124,9 +124,9 @@ export function ChatPanel(props: ChatPanelProps) {
                   key={uuid()}
                 />
               ))}
-            </li>
+            </div>
           ))}
-        </ul>
+        </article>
       </section>
       <footer className="flex items-center px-5 gap-x-5 absolute bottom-2 w-full">
         <Input
