@@ -6,42 +6,42 @@ export default {
       keyframes: {
         ripple: {
           from: {
-            transform: "scale(.8)",
-            opacity: "1"
+            transform: 'scale(.8)',
+            opacity: '1',
           },
           to: {
-            transform: "scale(2.4)",
-            opacity: "0"
+            transform: 'scale(2.4)',
+            opacity: '0',
           },
         },
         extendToBottom: {
           from: {
-            transform: "translateY(-20px)",
+            transform: 'translateY(-20px)',
           },
           to: {
-            transform: "translateY(0)",
+            transform: 'translateY(0)',
           },
-        }
+        },
       },
       animation: {
-        ripple: "ripple 2s infinite ease-in-out",
-        extendToBottom: "extendToBottom 0.5s ease-in-out",
-      }
+        ripple: 'ripple 2s infinite ease-in-out',
+        extendToBottom: 'extendToBottom 0.5s ease-in-out',
+      },
     },
     screens: {
       mobile: {
-        max: "767px"
-        },
+        max: '767px',
+      },
       tablet: {
-        min: "768px",
-        max: "1023px"
-      },  
+        min: '768px',
+        max: '1023px',
+      },
       desktop: {
-        min: "1024px",
-        max: "1919px"
+        min: '1024px',
+        max: '1919px',
       },
       fullscreen: {
-        min: "1920px",
+        min: '1920px',
       },
     },
     backgroundColor: {
@@ -53,8 +53,7 @@ export default {
     colors: {
       secondary: '#737373',
       white: '#FFFFFF',
-    }
+    },
   },
   plugins: [],
-}
-
+};

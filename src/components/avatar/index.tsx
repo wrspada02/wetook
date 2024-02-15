@@ -20,12 +20,15 @@ export function Avatar(props: AvatarProps) {
     setIsShowMenuOptionButton(true);
   };
 
-  const closeMenu = useCallback((e: Event) => {
-    if (menuRef.current && !menuRef.current?.contains(e.target as Node)) {
-      setIsMenuOpen(false);
-      setIsShowMenuOptionButton(false);
-    }
-  }, [menuRef]);
+  const closeMenu = useCallback(
+    (e: Event) => {
+      if (menuRef.current && !menuRef.current?.contains(e.target as Node)) {
+        setIsMenuOpen(false);
+        setIsShowMenuOptionButton(false);
+      }
+    },
+    [menuRef],
+  );
 
   const handleHideMenuOptionButton = useCallback(() => {
     if (menuRef.current) return;
@@ -33,16 +36,19 @@ export function Avatar(props: AvatarProps) {
     setIsShowMenuOptionButton(false);
   }, [menuRef]);
 
-  const avatarContextValue = useMemo(() => ({
-    ...props,
-    isMenuOpen,
-    openMenu,
-    menuRef,
-    isShowMenuOptionButton,
-    isShowMessage: true,
-    handleHideMenuOptionButton,
-    showMenuOptionButton,
-  }), [isMenuOpen, props, isShowMenuOptionButton, handleHideMenuOptionButton]);
+  const avatarContextValue = useMemo(
+    () => ({
+      ...props,
+      isMenuOpen,
+      openMenu,
+      menuRef,
+      isShowMenuOptionButton,
+      isShowMessage: true,
+      handleHideMenuOptionButton,
+      showMenuOptionButton,
+    }),
+    [isMenuOpen, props, isShowMenuOptionButton, handleHideMenuOptionButton],
+  );
 
   useEffect(() => {
     document.addEventListener('click', closeMenu, true);

@@ -1,4 +1,10 @@
-export type MessageType = 'common' | 'call' | 'audio' | 'file' | 'location' | 'photos';
+export type MessageType =
+  | 'common'
+  | 'call'
+  | 'audio'
+  | 'file'
+  | 'location'
+  | 'photos';
 
 export interface MessageProps {
   type: MessageType;

@@ -8,13 +8,13 @@ export function Content() {
   const avatar = useContext(AvatarContext);
 
   return (
-    <article className={`${avatar?.isColumnStyle && 'flex-col'} flex gap-x-2 w-full`}>
-      {avatar?.isGroup ? (
-        <Group />
-      ) : (
-        <Profile />
-      )}
-      <div className={`${avatar?.isColumnStyle && 'text-center pt-3 gap-y-5'} flex-1`}>
+    <article
+      className={`${avatar?.isColumnStyle && 'flex-col'} flex gap-x-2 w-full`}
+    >
+      {avatar?.isGroup ? <Group /> : <Profile />}
+      <div
+        className={`${avatar?.isColumnStyle && 'text-center pt-3 gap-y-5'} flex-1`}
+      >
         <AvatarDumb />
       </div>
     </article>

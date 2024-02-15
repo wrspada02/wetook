@@ -1,3 +1,3 @@
 export interface MessagePhotoProps {
-    photosUrl: string[];
+  photosUrl: string[];
 }

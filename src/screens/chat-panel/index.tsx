@@ -55,42 +55,113 @@ export function ChatPanel(props: ChatPanelProps) {
     },
   ];
 
-  const chat = [{
-    day: 'Today',
-    messages: [{
-      isIncomingMessage: true, messageContent: 'Hello World', messageType: 'common', hour: '09:32am',
-    }, {
-      isIncomingMessage: false, messageContent: ['https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg', 'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg', 'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg'], messageType: 'photos', hour: '09:40am',
-    }],
-  }, {
-    day: 'Today',
-    messages: [{
-      isIncomingMessage: true, messageContent: 'Hello World', messageType: 'common', hour: '09:32am',
-    }, {
-      isIncomingMessage: false, messageContent: ['https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg', 'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg', 'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg'], messageType: 'photos', hour: '09:40am',
-    }],
-  }, {
-    day: 'Today',
-    messages: [{
-      isIncomingMessage: true, messageContent: 'Hello World', messageType: 'common', hour: '09:32am',
-    }, {
-      isIncomingMessage: false, messageContent: ['https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg', 'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg', 'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg'], messageType: 'photos', hour: '09:40am',
-    }],
-  }, {
-    day: 'Today',
-    messages: [{
-      isIncomingMessage: true, messageContent: 'Hello World', messageType: 'common', hour: '09:32am',
-    }, {
-      isIncomingMessage: false, messageContent: ['https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg', 'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg', 'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg'], messageType: 'photos', hour: '09:40am',
-    }],
-  }, {
-    day: 'Today',
-    messages: [{
-      isIncomingMessage: true, messageContent: 'Hello World', messageType: 'common', hour: '09:32am',
-    }, {
-      isIncomingMessage: false, messageContent: ['https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg', 'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg', 'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg'], messageType: 'photos', hour: '09:40am',
-    }],
-  }];
+  const chat = [
+    {
+      day: 'Today',
+      messages: [
+        {
+          isIncomingMessage: true,
+          messageContent: 'Hello World',
+          messageType: 'common',
+          hour: '09:32am',
+        },
+        {
+          isIncomingMessage: false,
+          messageContent: [
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+          ],
+          messageType: 'photos',
+          hour: '09:40am',
+        },
+      ],
+    },
+    {
+      day: 'Today',
+      messages: [
+        {
+          isIncomingMessage: true,
+          messageContent: 'Hello World',
+          messageType: 'common',
+          hour: '09:32am',
+        },
+        {
+          isIncomingMessage: false,
+          messageContent: [
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+          ],
+          messageType: 'photos',
+          hour: '09:40am',
+        },
+      ],
+    },
+    {
+      day: 'Today',
+      messages: [
+        {
+          isIncomingMessage: true,
+          messageContent: 'Hello World',
+          messageType: 'common',
+          hour: '09:32am',
+        },
+        {
+          isIncomingMessage: false,
+          messageContent: [
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+          ],
+          messageType: 'photos',
+          hour: '09:40am',
+        },
+      ],
+    },
+    {
+      day: 'Today',
+      messages: [
+        {
+          isIncomingMessage: true,
+          messageContent: 'Hello World',
+          messageType: 'common',
+          hour: '09:32am',
+        },
+        {
+          isIncomingMessage: false,
+          messageContent: [
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+          ],
+          messageType: 'photos',
+          hour: '09:40am',
+        },
+      ],
+    },
+    {
+      day: 'Today',
+      messages: [
+        {
+          isIncomingMessage: true,
+          messageContent: 'Hello World',
+          messageType: 'common',
+          hour: '09:32am',
+        },
+        {
+          isIncomingMessage: false,
+          messageContent: [
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+            'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
+          ],
+          messageType: 'photos',
+          hour: '09:40am',
+        },
+      ],
+    },
+  ];
 
   return (
     <section className="relative bg-primary h-screen">
@@ -99,11 +170,16 @@ export function ChatPanel(props: ChatPanelProps) {
         <nav>
           <ul className="flex items-center gap-x-4">
             {headerListOptions.map((option) => (
-              <div key={uuid()} className="hover:cursor-pointer" onClick={option?.action} tabIndex={0} onKeyDown={option.action} role="button">
+              <div
+                key={uuid()}
+                className="hover:cursor-pointer"
+                onClick={option?.action}
+                tabIndex={0}
+                onKeyDown={option.action}
+                role="button"
+              >
                 <li>
-                  <Tooltip title={option.text}>
-                    {option.icon}
-                  </Tooltip>
+                  <Tooltip title={option.text}>{option.icon}</Tooltip>
                 </li>
               </div>
             ))}
@@ -133,26 +209,30 @@ export function ChatPanel(props: ChatPanelProps) {
           startAdornment={(
             <InputAdornment position="start">
               <Tooltip title="Attach File">
-                <AttachFileIcon style={{ color: 'white' }} className="hover:cursor-pointer" />
+                <AttachFileIcon
+                  style={{ color: 'white' }}
+                  className="hover:cursor-pointer"
+                />
               </Tooltip>
             </InputAdornment>
-            )}
+          )}
           endAdornment={(
             <InputAdornment position="end">
               <Tooltip title="Send Message">
-                <SendIcon style={{ color: 'white' }} className="hover:cursor-pointer" />
+                <SendIcon
+                  style={{ color: 'white' }}
+                  className="hover:cursor-pointer"
+                />
               </Tooltip>
             </InputAdornment>
-            )}
+          )}
           className="!text-white w-[90%] !bg-[#3F3F3F] p-1 !rounded-md"
           placeholder="Write a Message"
         />
         <ul className="flex items-center gap-x-2">
           {footerListOptions.map((option) => (
             <li key={uuid()} className="hover:cursor-pointer">
-              <Tooltip title={option.text}>
-                {option.icon}
-              </Tooltip>
+              <Tooltip title={option.text}>{option.icon}</Tooltip>
             </li>
           ))}
         </ul>

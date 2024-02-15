@@ -9,7 +9,10 @@ export function Contact() {
     <>
       <header className="flex items-center justify-between pt-10">
         <h1 className="text-white text-xl font-bold">Contact</h1>
-        <button type="button" aria-label="Configuration Button to adjust your system">
+        <button
+          type="button"
+          aria-label="Configuration Button to adjust your system"
+        >
           <Tooltip title="Configuration">
             <TuneIcon style={{ color: 'white' }} />
           </Tooltip>
@@ -23,11 +26,33 @@ export function Contact() {
             <InputAdornment position="start">
               <Search style={{ color: '#737373' }} />
             </InputAdornment>
-      )}
+          )}
         />
       </form>
-      <NestedList titleHeader="Contact" isThereAddIconButton items={[<Avatar isGroup={false} isHeaderAvatar={false} />, <Avatar isGroup={false} isHeaderAvatar={false} />, <Avatar isGroup={false} isHeaderAvatar={false} />, <Avatar isGroup={false} isHeaderAvatar={false} />, <Avatar isGroup={false} isHeaderAvatar={false} />, <Avatar isGroup={false} isHeaderAvatar={false} />]} />
-      <NestedList titleHeader="Group" isThereAddIconButton={false} items={[<Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />, <Avatar isGroup isHeaderAvatar={false} />]} />
+      <NestedList
+        titleHeader="Contact"
+        isThereAddIconButton
+        items={[
+          <Avatar isGroup={false} isHeaderAvatar={false} />,
+          <Avatar isGroup={false} isHeaderAvatar={false} />,
+          <Avatar isGroup={false} isHeaderAvatar={false} />,
+          <Avatar isGroup={false} isHeaderAvatar={false} />,
+          <Avatar isGroup={false} isHeaderAvatar={false} />,
+          <Avatar isGroup={false} isHeaderAvatar={false} />,
+        ]}
+      />
+      <NestedList
+        titleHeader="Group"
+        isThereAddIconButton={false}
+        items={[
+          <Avatar isGroup isHeaderAvatar={false} />,
+          <Avatar isGroup isHeaderAvatar={false} />,
+          <Avatar isGroup isHeaderAvatar={false} />,
+          <Avatar isGroup isHeaderAvatar={false} />,
+          <Avatar isGroup isHeaderAvatar={false} />,
+          <Avatar isGroup isHeaderAvatar={false} />,
+        ]}
+      />
     </>
   );
 }

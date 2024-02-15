@@ -6,9 +6,11 @@ export function Group() {
     <Badge
       overlap="circular"
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-      badgeContent={
-        <AvatarLib alt="Group profile picture" className="!w-5 !h-5 !text-xs">CS</AvatarLib>
-      }
+      badgeContent={(
+        <AvatarLib alt="Group profile picture" className="!w-5 !h-5 !text-xs">
+          CS
+        </AvatarLib>
+      )}
     >
       <AvatarLib alt="Profile user picture">PS</AvatarLib>
     </Badge>

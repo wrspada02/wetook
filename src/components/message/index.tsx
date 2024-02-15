@@ -7,7 +7,10 @@ import { Photos } from './components/photos';
 import { MessageProps } from './interfaces/MessageProps';
 
 export function Message({
-  type, value, isIncomingMessage, hour,
+  type,
+  value,
+  isIncomingMessage,
+  hour,
 }: MessageProps) {
   const message = {
     audio: <Audio timeDuration={value as string} />,
@@ -19,8 +22,12 @@ export function Message({
   };
 
   return (
-    <div className={`flex items-end gap-x-2 ${isIncomingMessage ? 'self-start' : 'self-end'}`}>
-      <article className={`${isIncomingMessage ? 'bg-[#2C80FF]' : 'bg-[#4C4C4C] float-right'} rounded-lg w-fit mt-3`}>
+    <div
+      className={`flex items-end gap-x-2 ${isIncomingMessage ? 'self-start' : 'self-end'}`}
+    >
+      <article
+        className={`${isIncomingMessage ? 'bg-[#2C80FF]' : 'bg-[#4C4C4C] float-right'} rounded-lg w-fit mt-3`}
+      >
         {message[type]}
       </article>
       <span className="text-[#919191] text-xs">{hour}</span>

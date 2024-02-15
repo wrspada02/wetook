@@ -18,7 +18,13 @@ export function NestedList(props: NestedListProps) {
   return (
     <article className="pt-3">
       <header className="flex items-center justify-between">
-        <div className="flex items-center gap-x-2 cursor-pointer" onClick={handleShowList} tabIndex={0} onKeyDown={handleShowList} role="button">
+        <div
+          className="flex items-center gap-x-2 cursor-pointer"
+          onClick={handleShowList}
+          tabIndex={0}
+          onKeyDown={handleShowList}
+          role="button"
+        >
           {isOpen ? (
             <Tooltip title="Close List">
               <ArrowDropDownIcon style={{ color: '#737373' }} />
@@ -28,24 +34,24 @@ export function NestedList(props: NestedListProps) {
               <ArrowDropUpIcon style={{ color: '#737373' }} />
             </Tooltip>
           )}
-          <span className="uppercase text-xs text-secondary">{props.titleHeader}</span>
+          <span className="uppercase text-xs text-secondary">
+            {props.titleHeader}
+          </span>
         </div>
         {props.isThereAddIconButton && (
-        <Tooltip title="Add Contact">
-          <AddIcon style={{ color: 'white' }} className="cursor-pointer" />
-        </Tooltip>
+          <Tooltip title="Add Contact">
+            <AddIcon style={{ color: 'white' }} className="cursor-pointer" />
+          </Tooltip>
         )}
       </header>
       {isOpen && (
-      <List className="animate-extendToBottom">
-        {props.items.map((item) => (
-          <ListItem disablePadding key={uuid()}>
-            <ListItemButton className="!px-0">
-              {item}
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+        <List className="animate-extendToBottom">
+          {props.items.map((item) => (
+            <ListItem disablePadding key={uuid()}>
+              <ListItemButton className="!px-0">{item}</ListItemButton>
+            </ListItem>
+          ))}
+        </List>
       )}
     </article>
   );
