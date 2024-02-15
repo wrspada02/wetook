@@ -1,5 +1,7 @@
+export type MessageType = 'common' | 'call' | 'audio' | 'file' | 'location' | 'photos';
+
 export interface MessageProps {
-  type: 'common' | 'call' | 'audio' | 'file' | 'location' | 'photos';
+  type: MessageType;
   value: string | string[];
   isIncomingMessage: boolean;
   hour: string;

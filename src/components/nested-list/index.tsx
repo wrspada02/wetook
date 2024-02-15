@@ -18,7 +18,7 @@ export function NestedList(props: NestedListProps) {
   return (
     <article className="pt-3">
       <header className="flex items-center justify-between">
-        <div className="flex items-center gap-x-2 cursor-pointer" onClick={handleShowList}>
+        <div className="flex items-center gap-x-2 cursor-pointer" onClick={handleShowList} tabIndex={0} onKeyDown={handleShowList} role="button">
           {isOpen ? (
             <Tooltip title="Close List">
               <ArrowDropDownIcon style={{ color: '#737373' }} />

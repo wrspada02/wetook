@@ -10,7 +10,7 @@ export function Location(props: MessageLocationProps) {
         <Typography component="p" variant="body2" className="text-white text-base">
           {props.locationName.substring(0, 30).concat('...')}
         </Typography>
-        <a href="" className="text-xs text-[#919191]">Click to view on detail</a>
+        <a href="google.com" className="text-xs text-[#919191]">Click to view on detail</a>
       </figcaption>
     </figure>
   );

@@ -9,7 +9,7 @@ export function Contact() {
     <>
       <header className="flex items-center justify-between pt-10">
         <h1 className="text-white text-xl font-bold">Contact</h1>
-        <button>
+        <button type="button" aria-label="Configuration Button to adjust your system">
           <Tooltip title="Configuration">
             <TuneIcon style={{ color: 'white' }} />
           </Tooltip>

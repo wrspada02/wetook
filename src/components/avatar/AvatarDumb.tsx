@@ -59,7 +59,7 @@ export function AvatarDumb() {
   ];
 
   return (
-    <section className="flex relative gap-x-3 mobile:justify-between !w-full" onMouseEnter={avatar?.showMenuOptionButton} onMouseLeave={avatar?.hideMenuOptionButton}>
+    <section className="flex relative gap-x-3 mobile:justify-between !w-full" onMouseEnter={avatar?.showMenuOptionButton} onMouseLeave={avatar?.handleHideMenuOptionButton}>
       <article className={avatar?.isHeaderAvatar ? 'w-full' : ''}>
         <h3 className="text-base text-white">William Spada</h3>
         <Typography component="p" variant="body2" className="text-sm text-[#919191]">
@@ -74,9 +74,11 @@ export function AvatarDumb() {
         </li>
         )}
         {avatar?.isShowMenuOptionButton && (
-        <li className="cursor-pointer hover:opacity-50 hover:transition-all mobile:hidden" onClick={avatar?.openMenu}>
-          <MoreVertIcon style={{ color: 'white' }} />
-        </li>
+        <div onClick={avatar?.openMenu} onKeyDown={avatar.openMenu} role="button" tabIndex={0} aria-label="Button to open avatar menu option">
+          <li className="cursor-pointer hover:opacity-50 hover:transition-all mobile:hidden">
+            <MoreVertIcon style={{ color: 'white' }} />
+          </li>
+        </div>
         )}
       </ul>
       )}

@@ -13,6 +13,7 @@ import AttachFileIcon from '@mui/icons-material/AttachFile';
 import { ChatPanelProps } from './interfaces/ChatPanelProps';
 import { Message } from '../../components/message';
 import { Avatar } from '../../components/avatar';
+import { MessageType } from '../../components/message/interfaces/MessageProps';
 
 export function ChatPanel(props: ChatPanelProps) {
   const headerListOptions = [
@@ -92,17 +93,19 @@ export function ChatPanel(props: ChatPanelProps) {
   }];
 
   return (
-    <section className="relative h-full bg-primary h-screen">
+    <section className="relative bg-primary h-screen">
       <header className="flex items-center justify-between gap-x-3 px-3 py-5 border-b-[0.5px] border-[#FCFCFC]">
         <Avatar isGroup={false} isHeaderAvatar key={uuid()} />
         <nav>
           <ul className="flex items-center gap-x-4">
             {headerListOptions.map((option) => (
-              <li key={uuid()} className="hover:cursor-pointer" onClick={option?.action}>
-                <Tooltip title={option.text}>
-                  {option.icon}
-                </Tooltip>
-              </li>
+              <div key={uuid()} className="hover:cursor-pointer" onClick={option?.action} tabIndex={0} onKeyDown={option.action} role="button">
+                <li>
+                  <Tooltip title={option.text}>
+                    {option.icon}
+                  </Tooltip>
+                </li>
+              </div>
             ))}
           </ul>
         </nav>
@@ -113,7 +116,13 @@ export function ChatPanel(props: ChatPanelProps) {
             <li className="flex flex-col" key={uuid()}>
               <h2 className="text-white self-center pt-5">{content.day}</h2>
               {content.messages.map((message) => (
-                <Message type={message.messageType} value={message.messageContent} isIncomingMessage={message.isIncomingMessage} hour={message.hour} key={uuid()} />
+                <Message
+                  type={message.messageType as MessageType}
+                  value={message.messageContent}
+                  isIncomingMessage={message.isIncomingMessage}
+                  hour={message.hour}
+                  key={uuid()}
+                />
               ))}
             </li>
           ))}

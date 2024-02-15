@@ -1,5 +1,7 @@
+import React from 'react';
+
 export interface NestedListProps {
  titleHeader: string;
- items: JSX.Element[];
+ items: React.ReactElement[];
  isThereAddIconButton: boolean;
 }
