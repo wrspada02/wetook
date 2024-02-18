@@ -49,7 +49,7 @@ export function AboutContact() {
       <Avatar isColumnStyle isGroup={false} isHeaderAvatar key={uuid()} />
       <ul className="flex gap-x-3 mt-5 justify-center">
         {aboutContactCommonListOptions.map((option) => (
-          <li className="p-4 bg-secondary rounded-lg hover:cursor-pointer">
+          <li className="p-4 bg-secondary rounded-lg hover:cursor-pointer" key={uuid()}>
             <Tooltip title={option.text}>{option.icon}</Tooltip>
           </li>
         ))}
@@ -61,7 +61,7 @@ export function AboutContact() {
         <nav>
           <ul>
             {aboutContactListOptions.map((option) => (
-              <li className="flex items-center gap-x-3 mt-3 relative hover:cursor-pointer">
+              <li className="flex items-center gap-x-3 mt-3 relative hover:cursor-pointer" key={uuid()}>
                 {option.icon}
                 <Typography
                   component="p"
