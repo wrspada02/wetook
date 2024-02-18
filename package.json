@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --fix --max-warnings=0",
+    "prettier": "yarn prettier .",
     "preview": "vite preview",
     "tailwind:watch": "npx tailwindcss -i ./src/index.css -o ./dist/index.css --watch"
   },

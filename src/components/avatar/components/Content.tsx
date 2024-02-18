@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Group } from './Group';
 import { Profile } from './Profile';
-import { AvatarDumb } from '../AvatarDumb';
+import { AvatarDumb } from './AvatarDumb';
 import { AvatarContext } from '../context/avatar';
 
 export function Content() {

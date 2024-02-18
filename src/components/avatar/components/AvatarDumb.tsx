@@ -14,7 +14,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ReportProblemOutlinedIcon from '@mui/icons-material/ReportProblemOutlined';
 import { useContext } from 'react';
 import { Typography } from '@mui/material';
-import { AvatarContext } from './context/avatar';
+import { AvatarContext } from '../context/avatar';
 
 export function AvatarDumb() {
   const avatar = useContext(AvatarContext);
