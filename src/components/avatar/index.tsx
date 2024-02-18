@@ -10,31 +10,19 @@ export function Avatar(props: AvatarProps) {
   const menuRef = useRef<HTMLUListElement | null>(null);
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isShowMenuOptionButton, setIsShowMenuOptionButton] = useState<boolean>(false);
 
   const openMenu = () => {
     setIsMenuOpen(true);
-  };
-
-  const showMenuOptionButton = () => {
-    setIsShowMenuOptionButton(true);
   };
 
   const closeMenu = useCallback(
     (e: Event) => {
       if (menuRef.current && !menuRef.current?.contains(e.target as Node)) {
         setIsMenuOpen(false);
-        setIsShowMenuOptionButton(false);
       }
     },
     [menuRef],
   );
-
-  const handleHideMenuOptionButton = useCallback(() => {
-    if (menuRef.current) return;
-
-    setIsShowMenuOptionButton(false);
-  }, [menuRef]);
 
   const avatarContextValue = useMemo(
     () => ({
@@ -42,12 +30,8 @@ export function Avatar(props: AvatarProps) {
       isMenuOpen,
       openMenu,
       menuRef,
-      isShowMenuOptionButton,
-      isShowMessage: true,
-      handleHideMenuOptionButton,
-      showMenuOptionButton,
     }),
-    [isMenuOpen, props, isShowMenuOptionButton, handleHideMenuOptionButton],
+    [isMenuOpen, props],
   );
 
   useEffect(() => {

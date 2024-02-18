@@ -70,8 +70,6 @@ export function AvatarDumb() {
   return (
     <article
       className="flex relative gap-x-3 mobile:justify-between !w-full"
-      onMouseEnter={avatar?.showMenuOptionButton}
-      onMouseLeave={avatar?.handleHideMenuOptionButton}
     >
       <article className={avatar?.isHeaderAvatar ? 'w-full' : ''}>
         <h3 className="text-base text-white">William Spada</h3>
@@ -84,16 +82,14 @@ export function AvatarDumb() {
         </Typography>
       </article>
       {!avatar?.isHeaderAvatar && (
-        <ul className="flex items-center gap-x-3">
-          {avatar?.isShowMessage && (
+        <>
+          <ul className="flex items-center gap-x-3" data-testid="avatar-actions">
             <li className="[clip-path:circle()] w-5 h-5 bg-[#FF4A4A] flex items-center justify-center">
               <span className="text-center text-white text-xs">3</span>
             </li>
-          )}
-          {avatar?.isShowMenuOptionButton && (
             <div
               onClick={avatar?.openMenu}
-              onKeyDown={avatar.openMenu}
+              onKeyDown={avatar?.openMenu}
               role="button"
               tabIndex={0}
               aria-label="Button to open avatar menu option"
@@ -102,21 +98,21 @@ export function AvatarDumb() {
                 <MoreVertIcon style={{ color: 'white' }} />
               </li>
             </div>
+          </ul>
+          {avatar?.isMenuOpen && (
+            <MenuList
+              className="bg-[#413e3e] text-white !absolute !left-0 z-10"
+              ref={avatar?.menuRef}
+            >
+              {avatarListOptions.map((option) => (
+                <MenuItem key={option.text}>
+                  <ListItemIcon>{option.icon}</ListItemIcon>
+                  <ListItemText>{option.text}</ListItemText>
+                </MenuItem>
+              ))}
+            </MenuList>
           )}
-        </ul>
-      )}
-      {avatar?.isMenuOpen && !avatar?.isHeaderAvatar && (
-        <MenuList
-          className="bg-[#413e3e] text-white !absolute !left-0 z-10"
-          ref={avatar?.menuRef}
-        >
-          {avatarListOptions.map((option) => (
-            <MenuItem key={option.text}>
-              <ListItemIcon>{option.icon}</ListItemIcon>
-              <ListItemText>{option.text}</ListItemText>
-            </MenuItem>
-          ))}
-        </MenuList>
+        </>
       )}
     </article>
   );
