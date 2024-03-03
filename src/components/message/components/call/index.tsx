@@ -4,7 +4,7 @@ import { MessageCallProps } from './interfaces/MessageCallProps';
 
 export function Call(props: MessageCallProps) {
   return (
-    <figure className="flex justify-center gap-x-2 text-white px-2 py-2">
+    <figure data-testid="message-call" className="flex justify-center gap-x-2 text-white px-2 py-2">
       <CallIcon
         style={{ color: `${props.type === 'incoming' ? '#FF4A4A' : 'green'}` }}
       />
