@@ -4,7 +4,7 @@ import {
 } from 'vitest';
 import { Message } from '.';
 
-describe('Components props', () => {
+describe('Component props', () => {
   afterEach(cleanup);
 
   it('should render audio message component', () => {
@@ -56,10 +56,42 @@ describe('Components props', () => {
   });
 });
 
-describe('Components UI', () => {
+describe('Component UI', () => {
   afterEach(cleanup);
+
+  it('should have blue background color for incoming message', () => {
+    render(<Message type="common" value="Hello World" hour="12:00" isIncomingMessage />);
+
+    const messageElement = screen.getByTestId('message-content');
+
+    expect(messageElement).toHaveProperty('className', 'bg-[#2C80FF] rounded-lg w-fit mt-3');
+  });
+
+  it('should have gray background color for incoming message', () => {
+    render(<Message type="common" value="Hello World" hour="12:00" isIncomingMessage={false} />);
+
+    const messageElement = screen.getByTestId('message-content');
+
+    expect(messageElement).toHaveProperty('className', 'bg-[#4C4C4C] float-right rounded-lg w-fit mt-3');
+  });
 });
 
-/* describe('User actions', () => {
+describe('Component logic', () => {
   afterEach(cleanup);
-}); */
+
+  it('should render the hour of the message', () => {
+    render(<Message type="common" value="Hello World" hour="12:00" isIncomingMessage={false} />);
+
+    const messageHourElement = screen.getByText('12:00');
+
+    expect(messageHourElement).toBeDefined();
+  });
+
+  it('should render the value of the message', () => {
+    render(<Message type="common" value="Hello World" hour="12:00" isIncomingMessage={false} />);
+
+    const messageValueElement = screen.getByText('Hello World');
+
+    expect(messageValueElement).toBeDefined();
+  });
+});

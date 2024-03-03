@@ -20,113 +20,17 @@ export function Home() {
           <section className="mobile:hidden tablet:hidden flex-1">
             <ChatPanel
               onClickAboutContact={handleAboutContact}
-              chat={[
-                {
-                  day: 'Today',
-                  messages: [
-                    {
-                      isIncomingMessage: true,
-                      messageContent: 'Hello World',
-                      messageType: 'common',
-                      hour: '09:32am',
-                    },
-                    {
-                      isIncomingMessage: false,
-                      messageContent: [
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                      ],
-                      messageType: 'photos',
-                      hour: '09:40am',
-                    },
-                  ],
-                },
-                {
-                  day: 'Today',
-                  messages: [
-                    {
-                      isIncomingMessage: true,
-                      messageContent: 'Hello World',
-                      messageType: 'common',
-                      hour: '09:32am',
-                    },
-                    {
-                      isIncomingMessage: false,
-                      messageContent: [
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                      ],
-                      messageType: 'photos',
-                      hour: '09:40am',
-                    },
-                  ],
-                },
-                {
-                  day: 'Today',
-                  messages: [
-                    {
-                      isIncomingMessage: true,
-                      messageContent: 'Hello World',
-                      messageType: 'common',
-                      hour: '09:32am',
-                    },
-                    {
-                      isIncomingMessage: false,
-                      messageContent: [
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                      ],
-                      messageType: 'photos',
-                      hour: '09:40am',
-                    },
-                  ],
-                },
-                {
-                  day: 'Today',
-                  messages: [
-                    {
-                      isIncomingMessage: true,
-                      messageContent: 'Hello World',
-                      messageType: 'common',
-                      hour: '09:32am',
-                    },
-                    {
-                      isIncomingMessage: false,
-                      messageContent: [
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                      ],
-                      messageType: 'photos',
-                      hour: '09:40am',
-                    },
-                  ],
-                },
-                {
-                  day: 'Today',
-                  messages: [
-                    {
-                      isIncomingMessage: true,
-                      messageContent: 'Hello World',
-                      messageType: 'common',
-                      hour: '09:32am',
-                    },
-                    {
-                      isIncomingMessage: false,
-                      messageContent: [
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                        'https://media.cntraveler.com/photos/651d8e07fe6c3b63c3ec5459/master/w_1600%2Cc_limit/japan-GettyImages-1424557887.jpeg',
-                      ],
-                      messageType: 'photos',
-                      hour: '09:40am',
-                    },
-                  ],
-                },
-              ]}
+              chat={[{
+                day: 'Today',
+                messages: [{
+                  hour: '09:32am', isIncomingMessage: true, messageContent: 'Hello World', messageType: 'audio',
+                }],
+              }, {
+                day: 'Today',
+                messages: [{
+                  hour: '09:32am', isIncomingMessage: false, messageContent: 'Hello World', messageType: 'audio',
+                }],
+              }]}
             />
           </section>
           {isOpenAboutContact && (

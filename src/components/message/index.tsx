@@ -26,6 +26,7 @@ export function Message({
       className={`flex items-end gap-x-2 ${isIncomingMessage ? 'self-start' : 'self-end'}`}
     >
       <article
+        data-testid="message-content"
         className={`${isIncomingMessage ? 'bg-[#2C80FF]' : 'bg-[#4C4C4C] float-right'} rounded-lg w-fit mt-3`}
       >
         {message[type]}
