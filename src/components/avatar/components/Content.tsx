@@ -9,6 +9,7 @@ export function Content() {
 
   return (
     <article
+      data-testid="avatar-content"
       className={`${avatar?.isColumnStyle && 'flex-col'} flex gap-x-2 w-full`}
     >
       {avatar?.isGroup ? <Group /> : <Profile />}

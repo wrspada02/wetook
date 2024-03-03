@@ -84,23 +84,25 @@ export function AvatarDumb() {
       {!avatar?.isHeaderAvatar && (
         <>
           <ul className="flex items-center gap-x-3" data-testid="avatar-actions">
-            <li className="[clip-path:circle()] w-5 h-5 bg-[#FF4A4A] flex items-center justify-center">
+            <li className="[clip-path:circle()] w-5 h-5 bg-[#FF4A4A] flex items-center justify-center" data-testid="message-counter">
               <span className="text-center text-white text-xs">3</span>
             </li>
             <div
+              data-testid="avatar-menu-option-button"
               onClick={avatar?.openMenu}
               onKeyDown={avatar?.openMenu}
               role="button"
               tabIndex={0}
               aria-label="Button to open avatar menu option"
             >
-              <li className="cursor-pointer hover:opacity-50 hover:transition-all mobile:hidden">
+              <li className="cursor-pointer hover:opacity-50 hover:transition-all mobile:hidden" data-testid="menu-option-button">
                 <MoreVertIcon style={{ color: 'white' }} />
               </li>
             </div>
           </ul>
           {avatar?.isMenuOpen && (
             <MenuList
+              data-testid="avatar-menu-option-list"
               className="bg-[#413e3e] text-white !absolute !left-0 z-10"
               ref={avatar?.menuRef}
             >
