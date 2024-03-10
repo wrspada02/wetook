@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 import { ChatPanel } from '../screens/chat-panel';
 import { AboutContact } from '../screens/about-contact';
 import { Contact } from '../screens/contact';
+import { CallModal } from '../components/call-modal';
 
 export function Home() {
   const [isOpenAboutContact, setIsOpenAboutContact] = useState<boolean>(false);
@@ -33,11 +34,14 @@ export function Home() {
               }]}
             />
           </section>
+
           {isOpenAboutContact && (
             <aside>
               <AboutContact />
             </aside>
           )}
+
+          <CallModal imagePath="https://avatars.githubusercontent.com/u/90157791?v=4" />
         </>
       )}
     </main>
