@@ -44,8 +44,9 @@ export function AboutContact() {
       text: 'Report',
     },
   ];
+
   return (
-    <section className="py-20 px-5 bg-primary h-screen">
+    <section className="py-20 px-5 bg-primary h-screen desktop:border-l-[0.5px] desktop:border-[#FCFCFC] fullscreen:border-l-[0.5px] fullscreen:border-[#FCFCFC]">
       <Avatar isColumnStyle isGroup={false} isHeaderAvatar key={uuid()} />
       <ul className="flex gap-x-3 mt-5 justify-center">
         {aboutContactCommonListOptions.map((option) => (
