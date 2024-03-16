@@ -56,6 +56,18 @@ export function ChatPanel(props: ChatPanelProps) {
     },
   ];
 
+  const chat = [{
+    day: 'Today',
+    messages: [{
+      hour: '09:32am', isIncomingMessage: true, messageContent: 'Hello World', messageType: 'audio',
+    }],
+  }, {
+    day: 'Today',
+    messages: [{
+      hour: '09:32am', isIncomingMessage: false, messageContent: 'Hello World', messageType: 'audio',
+    }],
+  }];
+
   return (
     <section className="relative bg-primary h-screen">
       <header className="flex items-center justify-between gap-x-3 px-3 py-5 border-b-[0.5px] border-[#FCFCFC]">
@@ -81,7 +93,7 @@ export function ChatPanel(props: ChatPanelProps) {
       </header>
       <section className="px-5 max-h-[80vh] overflow-y-auto scrollbar">
         <article>
-          {props.chat.map((content) => (
+          {chat.map((content) => (
             <div className="flex flex-col" key={uuid()}>
               <h2 className="text-white self-center pt-5">{content.day}</h2>
               {content.messages.map((message) => (

@@ -31,17 +31,6 @@ export function Home() {
             <ChatPanel
               openCallModal={openCallModal}
               onClickAboutContact={handleAboutContact}
-              chat={[{
-                day: 'Today',
-                messages: [{
-                  hour: '09:32am', isIncomingMessage: true, messageContent: 'Hello World', messageType: 'audio',
-                }],
-              }, {
-                day: 'Today',
-                messages: [{
-                  hour: '09:32am', isIncomingMessage: false, messageContent: 'Hello World', messageType: 'audio',
-                }],
-              }]}
             />
           </section>
 
@@ -52,7 +41,7 @@ export function Home() {
           )}
 
           {isOpenCallModal && (
-            <CallModal imagePath="https://avatars.githubusercontent.com/u/90157791?v=4" setIsOpenCallModal={closeCallModal} />
+            <CallModal imagePath="https://avatars.githubusercontent.com/u/90157791?v=4" closeCallModal={closeCallModal} />
           )}
         </>
       )}

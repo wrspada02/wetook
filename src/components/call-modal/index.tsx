@@ -26,7 +26,7 @@ export function CallModal(props: CallModalProps) {
   return (
     <CallModalDumb
       imagePath={props.imagePath}
-      closeModal={props.setIsOpenCallModal}
+      closeModal={props.closeCallModal}
       isConnected={isConnected}
       timer={connectedTimer}
     />
