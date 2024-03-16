@@ -10,7 +10,7 @@ export function CallModal(props: CallModalProps) {
     const minutes = Math.floor(totalSec / 60);
     const seconds = totalSec % 60;
 
-    return `${minutes}:${seconds}`;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
 
   const connectedTimer = useMemo(() => transformSecondsToTimer(totalSeconds), [totalSeconds]);
@@ -24,6 +24,11 @@ export function CallModal(props: CallModalProps) {
   }, []);
 
   return (
-    <CallModalDumb imagePath={props.imagePath} isConnected={isConnected} timer={connectedTimer} />
+    <CallModalDumb
+      imagePath={props.imagePath}
+      closeModal={props.setIsOpenCallModal}
+      isConnected={isConnected}
+      timer={connectedTimer}
+    />
   );
 }

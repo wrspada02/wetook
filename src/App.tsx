@@ -11,7 +11,7 @@ function App() {
     },
     {
       path: '/chat/:chatId',
-      element: <ChatPanel chat={[]} onClickAboutContact={() => {}} />,
+      element: <ChatPanel openCallModal={} chat={[]} onClickAboutContact={() => {}} />,
     },
     {
       path: '/about-contact/:userId',

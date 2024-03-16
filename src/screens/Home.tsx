@@ -6,10 +6,19 @@ import { CallModal } from '../components/call-modal';
 
 export function Home() {
   const [isOpenAboutContact, setIsOpenAboutContact] = useState<boolean>(false);
+  const [isOpenCallModal, setIsOpenCallModal] = useState<boolean>(false);
 
   const handleAboutContact = useCallback(() => {
     setIsOpenAboutContact(!isOpenAboutContact);
   }, [isOpenAboutContact]);
+
+  const closeCallModal = useCallback(() => {
+    setIsOpenCallModal(false);
+  }, []);
+
+  const openCallModal = useCallback(() => {
+    setIsOpenCallModal(true);
+  }, []);
 
   return (
     <main className="bg-primary mobile:px-5 desktop:flex fullscreen:flex overflow-hidden max-h-screen h-screen mobile:h-auto mobile:min-h-screen mobile:max-h-max">
@@ -20,6 +29,7 @@ export function Home() {
         <>
           <section className="mobile:hidden tablet:hidden flex-1">
             <ChatPanel
+              openCallModal={openCallModal}
               onClickAboutContact={handleAboutContact}
               chat={[{
                 day: 'Today',
@@ -41,7 +51,9 @@ export function Home() {
             </aside>
           )}
 
-          <CallModal imagePath="https://avatars.githubusercontent.com/u/90157791?v=4" />
+          {isOpenCallModal && (
+            <CallModal imagePath="https://avatars.githubusercontent.com/u/90157791?v=4" setIsOpenCallModal={closeCallModal} />
+          )}
         </>
       )}
     </main>

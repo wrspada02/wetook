@@ -24,6 +24,7 @@ export function ChatPanel(props: ChatPanelProps) {
     {
       icon: <CallIcon fontSize="small" style={{ color: 'white' }} />,
       text: 'Voice Call',
+      action: props.openCallModal,
     },
     {
       icon: <SearchIcon fontSize="small" style={{ color: 'white' }} />,
